@@ -18,9 +18,9 @@ ORG_URL = "https://api.calendly.com/organizations/8910725e-6409-44dc-ba57-ead6dd
 SCHEDULED_EVENTS_ENDPOINT = 'https://api.calendly.com/scheduled_events'
 
 # Secret retrieval
-def get_token(secret_name='calendly-api-token'):
+def get_token(secret_name='calendly-api-token01'):
     resp = secrets.get_secret_value(SecretId=secret_name)
-    return json.loads(resp['SecretString'])['CalendlyAPIToken']
+    return json.loads(resp['SecretString'])['calendly-api-token']
 
 # Tracker management
 def get_last_ingested():

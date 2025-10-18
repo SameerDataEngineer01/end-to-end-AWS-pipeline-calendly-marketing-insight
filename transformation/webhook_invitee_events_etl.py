@@ -42,6 +42,6 @@ df_flat = df.select(
 )
 
 # Write as Parquet
-df_flat.write.mode("overwrite").parquet("s3://calendly-marketing-data/transformed/webhook_invitee_events/")
+df_flat.write.mode("overwrite").parquet("s3://calendly-marketing-data01/transformed/webhook_invitee_events/")
 
 job.commit()

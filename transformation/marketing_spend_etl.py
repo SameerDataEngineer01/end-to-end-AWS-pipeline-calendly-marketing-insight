@@ -28,7 +28,7 @@ df_new = dyf.toDF().select(
 
 # Try loading existing transformed data
 try:
-    df_existing = spark.read.parquet("s3://calendly-marketing-data/transformed/marketing_spend/")
+    df_existing = spark.read.parquet("s3://calendly-marketing-data01/transformed/marketing_spend/")
     df_combined = df_existing.unionByName(df_new)
 except AnalysisException:
     # If no existing data, only use new
@@ -41,7 +41,7 @@ df_deduped = df_combined.withColumn("row_num", row_number().over(window_spec)) \
                         .drop("row_num")
 
 # Overwrite output with clean deduplicated data
-df_deduped.write.mode("overwrite").parquet("s3://calendly-marketing-data/transformed/marketing_spend/")
+df_deduped.write.mode("overwrite").parquet("s3://calendly-marketing-data01/transformed/marketing_spend/")
 
 job.commit()
 

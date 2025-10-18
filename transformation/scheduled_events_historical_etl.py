@@ -35,4 +35,4 @@ df_flat = df.selectExpr("explode(collection) as event") \
     )
 
 # Write to Parquet
-df_flat.write.mode("overwrite").parquet("s3://calendly-marketing-data/transformed/scheduled_events/")
+df_flat.write.mode("overwrite").parquet("s3://calendly-marketing-data01/transformed/scheduled_events/")

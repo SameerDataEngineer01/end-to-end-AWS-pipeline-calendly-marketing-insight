@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 s3 = boto3.client('s3')
 
 PUBLIC_BUCKET = 'placeholder' # company's public s3 bucket name
-DEST_BUCKET = 'calendly-marketing-data'
+DEST_BUCKET = 'calendly-marketing-data01'
 DEST_PREFIX = 'raw/calendly/marketing/'
 
 def lambda_handler(event, context):

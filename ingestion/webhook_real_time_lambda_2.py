@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 
 s3 = boto3.client('s3')
-BUCKET_NAME = 'calendly-marketing-data'
+BUCKET_NAME = 'calendly-marketing-data01'
 
 def lambda_handler(event, context):
     # print("Incoming event:", json.dumps(event, indent=2))
